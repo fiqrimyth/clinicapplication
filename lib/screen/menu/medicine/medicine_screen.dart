@@ -1,3 +1,4 @@
+import 'package:clinicapplication/screen/menu/medicine/detail/medicine_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class MedicineScreen extends StatefulWidget {
@@ -152,90 +153,100 @@ class _MedicineScreenState extends State<MedicineScreen> {
   }
 
   Widget _buildMedicineCard() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
-            spreadRadius: 0,
-            blurRadius: 8,
-            offset: const Offset(0, 4),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const MedicineDetailScreen(),
           ),
-        ],
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Center(
-                child: Image.asset(
-                  'assets/medicine_placeholder.png',
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-            const SizedBox(height: 12),
-            const Text(
-              'Sanmol 500mg Strip',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF1F1F1F),
-              ),
-            ),
-            const Text(
-              '4 Tablet',
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF757575),
-              ),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Rp 2.000',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: Color(0xFF1F1F1F),
-              ),
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Image.asset(
-                  'assets/icon/linear/location.png',
-                  width: 16,
-                  height: 16,
-                  color: Colors.grey[400],
-                ),
-                const SizedBox(width: 4),
-                Text(
-                  'Jakarta Selatan',
-                  style: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: GestureDetector(
-                onTap: () {},
-                child: Image.asset(
-                  'assets/icon/linear/archive.png',
-                  width: 24,
-                  height: 24,
-                  color: Colors.black,
-                ),
-              ),
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 0,
+              blurRadius: 8,
+              offset: const Offset(0, 4),
             ),
           ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Center(
+                  child: Image.asset(
+                    'assets/medicine_placeholder.png',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                'Sanmol 500mg Strip',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFF1F1F1F),
+                ),
+              ),
+              const Text(
+                '4 Tablet',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Color(0xFF757575),
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Rp 2.000',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF1F1F1F),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/icon/linear/location.png',
+                    width: 16,
+                    height: 16,
+                    color: Colors.grey[400],
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    'Jakarta Selatan',
+                    style: TextStyle(
+                      color: Colors.grey[400],
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Image.asset(
+                    'assets/icon/linear/archive.png',
+                    width: 24,
+                    height: 24,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
